@@ -3,9 +3,9 @@ package entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
+//@Entity
 public class Student {
-    @Id
+  //  @Id
     private Integer id;
 
     private String name;

@@ -1,4 +1,6 @@
+import dal.MovieDAOImpl;
 import dal.StudentDAOImpl;
+import entity.Movie;
 import entity.Student;
 
 import javax.persistence.EntityManagerFactory;
@@ -9,12 +11,18 @@ public class FirstApp {
 
     public static void main(String[] args) {
         entityManagerFactory = Persistence.createEntityManagerFactory("PU1");
-        StudentDAOImpl studentDAO = new StudentDAOImpl(entityManagerFactory);
+        MovieDAOImpl movieDAO = new MovieDAOImpl(entityManagerFactory);
 
-        Student student = new Student();
-        student.setName("test");
-        student.setId(1);
+        Movie movie = new Movie("Wiedźmin", 1995, 2.30d, "fantastyczny");
 
-        studentDAO.create(student);
+        movieDAO.create(movie);
+
+//        StudentDAOImpl studentDAO = new StudentDAOImpl(entityManagerFactory);
+//
+//        Student student = new Student();
+//        student.setName("test");
+//        student.setId(1);
+//
+//        studentDAO.create(student);
     }
 }
